@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap4-vibrant-sea.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap4-vibrant-sea.min.css}"/>
+    <title>login</title>
+</head>
+<body>
+    <form th:action="@{/loginController}" th:object="${utilisateur}" method="post">
+        <p><input type="hidden" th:field="*{nom}" id="nom" value="azerty"/>  </p>
+        <p><input type="hidden" th:field="*{prenom}" id="prenom" value="azerty"/>  </p>
+        <p>email : <input type="email" th:field="*{email}" id="email"/></p>
+        <p>passwd: <input type="password" th:field="*{passwd}" id="passwd"/></p>
+        <p> <input type="submit" value="connecter"/> <input type="reset" value="reset"/> </p>
+    </form>
+</body>
+</html>

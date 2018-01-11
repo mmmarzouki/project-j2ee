@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Projet</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap4-vibrant-sea.css}" />
+    <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap4-vibrant-sea.min.css}" />
+</head>
+<body>
+    <p th:text="HELLO"/>
+
+    <table border="2">
+        <tr>
+            <th>
+                libelle
+            </th>
+            <th>
+                description
+            </th>
+            <th>
+                prix
+            </th>
+            <th>
+                categorie
+            </th>
+            <th>
+
+            </th>
+        </tr>
+        <tr th:each= "produit: ${produits} ">
+            <td th:text="${produit.getLibelle()}"> LIBELLE </td>
+            <td th:text="${produit.getDescription()}" > DESCRIPTION </td>
+            <td th:text="${produit.getPrix()}" > PRIX </td>
+            <td th:text="${produit.getCategorie().getNom()}" > NOM </td>
+            <td> <a th:href="@{/produit(id=${produit.getId()})}"> details </a> </td>
+        </tr>
+    </table>
+    <a href="/deconnecter" class="btn btn-shadow btn-primary">Deconnecter</a>
+</body>
+</html>

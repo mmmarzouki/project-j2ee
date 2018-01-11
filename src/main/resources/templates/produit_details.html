@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap4-vibrant-sea.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap4-vibrant-sea.min.css}"/>
+    <title th:text="${produit.getLibelle()}">Produit Detail</title>
+</head>
+<body>
+    <p th:text="${produit.getLibelle()}"> </p>
+    <p th:text="${produit.getDescription()}"> </p>
+    <p th:text="${produit.getPrix()}"> </p>
+    <p th:text="${produit.getCategorie().getNom()}"> </p>
+</body>
+</html>
