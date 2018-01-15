@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Jan 11, 2018 at 10:59 AM
+-- Generation Time: Jan 15, 2018 at 07:36 AM
 -- Server version: 5.7.19
 -- PHP Version: 5.6.31
 
@@ -89,19 +89,22 @@ CREATE TABLE IF NOT EXISTS `produits` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `libelle` varchar(255) NOT NULL,
   `description` varchar(255) NOT NULL,
+  `picture` varchar(255) NOT NULL,
   `prix` float NOT NULL,
   `categorie_id` int(10) UNSIGNED NOT NULL,
   PRIMARY KEY (`id`),
   KEY `FKrajacxk0shaocjomehg40ap74` (`categorie_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `produits`
 --
 
-INSERT INTO `produits` (`id`, `libelle`, `description`, `prix`, `categorie_id`) VALUES
-(1, 'gaucho', 'ye8leb l jou3', 1, 1),
-(2, 'simba', 'peluche simba', 40, 4);
+INSERT INTO `produits` (`id`, `libelle`, `description`, `picture`, `prix`, `categorie_id`) VALUES
+(1, 'gaucho', 'ye8leb l jou3', 'gaucho.png', 1, 1),
+(2, 'simba', 'peluche simba', 'simba.jpg', 40, 4),
+(5, '&zéaerzùm0', 'zaer_jpç*78', 'test.png', 69.5, 2),
+(6, 'azrea', 'ezartdyughijkll', 'test.png', 69.5, 1);
 
 -- --------------------------------------------------------
 

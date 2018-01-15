@@ -8,8 +8,11 @@
 <body>
     <p th:text="HELLO"/>
 
-    <table border="2">
+    <table border="2" class="table">
         <tr>
+            <th>
+                photo
+            </th>
             <th>
                 libelle
             </th>
@@ -27,6 +30,7 @@
             </th>
         </tr>
         <tr th:each= "produit: ${produits} ">
+            <td><img th:src="@{|/img/${produit.getPicture()}|}"/></td>
             <td th:text="${produit.getLibelle()}"> LIBELLE </td>
             <td th:text="${produit.getDescription()}" > DESCRIPTION </td>
             <td th:text="${produit.getPrix()}" > PRIX </td>
@@ -35,5 +39,6 @@
         </tr>
     </table>
     <a href="/deconnecter" class="btn btn-shadow btn-primary">Deconnecter</a>
+    <a href="/ajoutProduitForm" class="btn btn-shadow btn-primary">Ajouter Produit</a>
 </body>
 </html>

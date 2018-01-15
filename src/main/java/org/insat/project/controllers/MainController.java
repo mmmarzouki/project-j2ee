@@ -36,6 +36,8 @@ public class MainController {
         if(!utilisateur.isAdmin())
             return "index";
 
+        ArrayList<Produit> produits= (ArrayList<Produit>)produitRepository.findAll();
+        model.addAttribute("produits",produits);
         return "administration";
     }
 

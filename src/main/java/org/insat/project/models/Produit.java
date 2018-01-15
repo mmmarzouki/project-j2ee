@@ -1,5 +1,7 @@
 package org.insat.project.models;
 
+import org.insat.project.controllers.ProduitController;
+
 import javax.persistence.*;
 
 @Entity
@@ -14,11 +16,16 @@ public class Produit {
     private String description;
     @Column (name = "prix", table = "produits")
     private float prix;
+    @Column(name = "", table = "")
+    private String picture;
 
     @ManyToOne
     @JoinColumn(name = "categorie_id")
     private Categorie categorie;
 
+    public String getPicture() { return picture; }
+
+    public void setPicture(String picture) { this.picture = picture; }
 
     public int getId() {
         return id;
@@ -64,10 +71,11 @@ public class Produit {
     public Produit() {
     }
 
-    public Produit(String libelle, String description, float prix, Categorie categorie) {
+    public Produit(String libelle, String description, float prix, Categorie categorie, String picture) {
         this.libelle = libelle;
         this.description = description;
         this.prix = prix;
         this.categorie = categorie;
+        this.picture=picture;
     }
 }

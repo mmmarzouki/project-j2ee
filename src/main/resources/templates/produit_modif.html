@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap4-vibrant-sea.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap4-vibrant-sea.min.css}"/>
+    <title>Modif Produit</title>
+</head>
+<body>
+<form th:object="${produit}" method="post" action="/ajoutProduit" enctype="multipart/form-data" >
+    <p><input type="hidden" th:value="${produit.getLibelle()}"> </p>
+    <p>Libelle: <input type="text" th:value="${produit.getLibelle()}" th:field="*{libelle}" id="libelle"/></p>
+    <p>Description: <input type="text" th:value="${produit.getDescription()}" th:field="*{description}" id="description"/></p>
+    <p>Photo:<img th:src="@{|/img/${produit.getPicture()}|}"/> <input type="file" name="file" id="photo"/></p>
+    <p>Prix: <input type="text" th:value="${produit.getPrix()}" th:field="*{prix}" id="prix"/></p>
+    <p>Categorie:
+        <select th:field="*{categorie}">
+            <option th:each="categorie: ${categories}" th:value="${categorie.getId()}" th:text="${categorie.getNom()}">
+                DEFAULT
+            </option>
+        </select>
+    </p>
+    <p><input type="submit" value="terminer"/> <input type="reset" value="reset"/></p>
+</form>
+</body>
+</html>
